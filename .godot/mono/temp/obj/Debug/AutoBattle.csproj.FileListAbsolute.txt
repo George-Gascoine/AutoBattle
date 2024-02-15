@@ -15,3 +15,4 @@ C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\refint\AutoBattle.dll
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.pdb
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.genruntimeconfig.cache
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\ref\AutoBattle.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.sourcelink.json

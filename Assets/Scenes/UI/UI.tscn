@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba4tb8xhcqswr"]
+[gd_scene load_steps=11 format=3 uid="uid://ba4tb8xhcqswr"]
 
 [ext_resource type="Theme" uid="uid://c1odjks571pmy" path="res://Assets/Themes/HealthBarTheme.tres" id="1_84fln"]
 [ext_resource type="Script" path="res://Assets/Scripts/Managers/UI.cs" id="1_mo48o"]
 [ext_resource type="Texture2D" uid="uid://jnu3hoy1x6jc" path="res://Assets/Sprites/UI/HP.png" id="3_iv7is"]
 [ext_resource type="Texture2D" uid="uid://c25ynae136fio" path="res://Assets/Sprites/UI/Ability1Icon.png" id="3_ls2wq"]
+[ext_resource type="Theme" uid="uid://t234vulk02e3" path="res://Assets/Themes/UITheme.tres" id="4_bi8an"]
+[ext_resource type="FontFile" uid="uid://ib67ral44esq" path="res://Assets/Fonts/m5x7.ttf" id="6_l8833"]
+[ext_resource type="Texture2D" uid="uid://cwfuyqithebuh" path="res://Assets/Sprites/Drops/ToxicCanister.png" id="6_nkxmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykgxh"]
 bg_color = Color(0, 0, 0, 0)
@@ -11,20 +14,11 @@ bg_color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd74s"]
 bg_color = Color(0.333333, 0.333333, 0.333333, 0.443137)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_foaw4"]
+bg_color = Color(0, 0.67451, 0.258824, 1)
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_mo48o")
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = 29.0
-offset_top = 20.0
-offset_right = 141.0
-offset_bottom = 39.0
-theme = ExtResource("1_84fln")
-show_percentage = false
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
-position = Vector2(-11, 9)
-texture = ExtResource("3_iv7is")
 
 [node name="AbilityContainer" type="HBoxContainer" parent="."]
 anchors_preset = 2
@@ -34,6 +28,7 @@ offset_left = 37.0
 offset_top = -40.0
 offset_right = 170.0
 grow_vertical = 0
+theme = ExtResource("4_bi8an")
 theme_override_constants/separation = 40
 
 [node name="Ability1" type="Label" parent="AbilityContainer"]
@@ -102,3 +97,35 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ykgxh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wd74s")
 value = 100.0
 show_percentage = false
+
+[node name="BarContainer" type="VBoxContainer" parent="."]
+offset_left = 37.0
+offset_top = 13.0
+offset_right = 137.0
+offset_bottom = 59.0
+theme_override_constants/separation = 10
+
+[node name="HealthBar" type="ProgressBar" parent="BarContainer"]
+custom_minimum_size = Vector2(60, 18)
+layout_mode = 2
+theme = ExtResource("1_84fln")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="BarContainer/HealthBar"]
+position = Vector2(-11, 9)
+texture = ExtResource("3_iv7is")
+
+[node name="GasBar" type="ProgressBar" parent="BarContainer"]
+custom_minimum_size = Vector2(60, 18)
+layout_mode = 2
+theme = ExtResource("1_84fln")
+theme_override_fonts/font = ExtResource("6_l8833")
+theme_override_styles/fill = SubResource("StyleBoxFlat_foaw4")
+step = 1.0
+value = 100.0
+rounded = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BarContainer/GasBar"]
+position = Vector2(-11, 9)
+texture = ExtResource("6_nkxmq")

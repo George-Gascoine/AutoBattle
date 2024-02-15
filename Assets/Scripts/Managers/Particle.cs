@@ -26,7 +26,7 @@ public partial class Particle : RigidBody2D
         {
             GD.Print("Particle collision detected!");
             Enemy enemy = area.GetParent<Enemy>();
-            enemy.TakeDamage(5);
+            enemy.TakeDamage(player.gasDamage);
         }
     }
 

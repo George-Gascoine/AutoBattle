@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvmgecuy7l5ld"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/GameManager.cs" id="1_50n6k"]
+[ext_resource type="PackedScene" uid="uid://cl8ot4j6c8eth" path="res://Assets/Scenes/DamageNumber.tscn" id="2_enm33"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_50n6k")
+damageNumber = ExtResource("2_enm33")

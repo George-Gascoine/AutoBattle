@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1jhkla2q28ye"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/DamageNumber.cs" id="1_3e08k"]
+[ext_resource type="Theme" uid="uid://t234vulk02e3" path="res://Assets/Themes/UITheme.tres" id="1_qjr38"]
+
+[node name="DamageNumber" type="Label"]
+custom_minimum_size = Vector2(10, 10)
+offset_right = 10.0
+offset_bottom = 23.0
+theme = ExtResource("1_qjr38")
+script = ExtResource("1_3e08k")
+
+[node name="DestroyTimer" type="Timer" parent="."]

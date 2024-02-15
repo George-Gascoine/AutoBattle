@@ -2,21 +2,29 @@ using Godot;
 
 public partial class Enemy : CharacterBody2D
 {
+
     public GameManager gameManager;
     public Player player { get; set; }
     public AnimationPlayer animationPlayer { get; set; }
+    public AnimationPlayer damagePlayer { get; set; }
 
     public bool takingDamage = false;
     [Export]
     public int Speed { get; set; } = 32;
 
+    public int health = 100;
+
     private Vector2 _target;
 
     public bool playerFound;
+
+    [Export]
+    public PackedScene gasDrop;
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
         CallDeferred("FindPlayer");
     }
 
@@ -68,8 +76,14 @@ public partial class Enemy : CharacterBody2D
     {
         if (!takingDamage)
         {
+            health -= damage;
+            gameManager.CreateDamageNumber(damage, Position);
+            if (health <= 0)
+            {
+                DestroyAndDrop();
+            }
             takingDamage = true;
-            animationPlayer.Play("TakeDamage");
+            damagePlayer.Play("TakeDamage");
         }
     }
 
@@ -81,5 +95,14 @@ public partial class Enemy : CharacterBody2D
                 takingDamage = false;
                 break;
         }
+    }
+
+    public void DestroyAndDrop()
+    {
+        GasCanister canister = (GasCanister)gasDrop.Instantiate();
+        Node2D world = GetNode<Node2D>("/root/World");
+        world.CallDeferred("add_child", canister);
+        canister.Position = Position;
+        QueueFree();
     }
 }

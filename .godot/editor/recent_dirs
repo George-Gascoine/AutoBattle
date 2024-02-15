@@ -1,6 +1,8 @@
-res://Assets/Scripts/Managers
+res://Assets/Scenes/Managers
 res://Assets/Scenes
+res://Assets/Fonts
+res://Assets/Scripts
+res://Assets/Themes
+res://Assets/Scripts/Managers
 res://Assets/Sprites/Abilities
 res://Assets/Shaders
-res://Assets/Themes
-res://Assets/Scripts

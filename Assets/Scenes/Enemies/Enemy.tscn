@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr42n3l1ugspm"]
+[gd_scene load_steps=10 format=3 uid="uid://cr42n3l1ugspm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Enemy.cs" id="1_8qc5m"]
+[ext_resource type="PackedScene" uid="uid://bkkd0ijpniuwk" path="res://Assets/Scenes/Drops/GasCanister.tscn" id="2_km2qt"]
 [ext_resource type="Texture2D" uid="uid://51da8s6y7s7s" path="res://Assets/Sprites/Enemies/Enemy.png" id="2_udqst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itqmh"]
@@ -22,18 +23,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [Rect2(0, 0, 32, 33), Rect2(32, 0, 32, 33), Rect2(64, 0, 32, 33), Rect2(96, 0, 32, 33)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 0.556863), Color(1, 0, 0, 0.556863), Color(1, 0, 0, 0.556863), Color(1, 0, 0, 0.556863)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1i0jh"]
 _data = {
@@ -43,13 +32,35 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaqb7"]
 size = Vector2(20, 31)
 
+[sub_resource type="Animation" id="Animation_ggsrg"]
+resource_name = "TakeDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.670588), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ib1ra"]
+_data = {
+"TakeDamage": SubResource("Animation_ggsrg")
+}
+
 [node name="Enemy" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_8qc5m")
+gasDrop = ExtResource("2_km2qt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_udqst")
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 33)
+region_rect = Rect2(64, 0, 32, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
@@ -66,4 +77,10 @@ libraries = {
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_xaqb7")
 
+[node name="DamagePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ib1ra")
+}
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationEnd"]
+[connection signal="animation_finished" from="DamagePlayer" to="." method="OnAnimationEnd"]
