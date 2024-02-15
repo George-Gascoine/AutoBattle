@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8y2j8F54zrNuMpqpQZ53TGBplab3ixeOjhu0lawbqf09mytMOk594lE3P+6t1H47ZcNJ2mDVMf6dTARTzdaH9g==",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\AutoBattle\\AutoBattle.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Georg\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\Georg\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\Georg\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

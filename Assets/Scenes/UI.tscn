@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba4tb8xhcqswr"]
+
+[ext_resource type="Theme" uid="uid://c1odjks571pmy" path="res://Assets/Themes/HealthBarTheme.tres" id="1_84fln"]
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/UI.cs" id="1_mo48o"]
+[ext_resource type="Texture2D" uid="uid://jnu3hoy1x6jc" path="res://Assets/Sprites/UI/HP.png" id="3_iv7is"]
+[ext_resource type="Texture2D" uid="uid://c25ynae136fio" path="res://Assets/Sprites/UI/Ability1Icon.png" id="3_ls2wq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykgxh"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd74s"]
+bg_color = Color(0.333333, 0.333333, 0.333333, 0.443137)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_mo48o")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 141.0
+offset_bottom = 39.0
+theme = ExtResource("1_84fln")
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
+position = Vector2(-11, 9)
+texture = ExtResource("3_iv7is")
+
+[node name="AbilityContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -40.0
+offset_right = 170.0
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="Ability1" type="Label" parent="AbilityContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Icon" type="Sprite2D" parent="AbilityContainer/Ability1"]
+show_behind_parent = true
+texture = ExtResource("3_ls2wq")
+
+[node name="Cooldown" type="ProgressBar" parent="AbilityContainer/Ability1/Icon"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ykgxh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wd74s")
+value = 100.0
+show_percentage = false
+
+[node name="Ability2" type="Label" parent="AbilityContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="Icon" type="Sprite2D" parent="AbilityContainer/Ability2"]
+texture = ExtResource("3_ls2wq")
+
+[node name="Cooldown" type="ProgressBar" parent="AbilityContainer/Ability2/Icon"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ykgxh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wd74s")
+value = 100.0
+show_percentage = false
+
+[node name="Ability3" type="Label" parent="AbilityContainer"]
+layout_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="AbilityContainer/Ability3"]
+texture = ExtResource("3_ls2wq")
+
+[node name="Cooldown" type="ProgressBar" parent="AbilityContainer/Ability3/Icon"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ykgxh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wd74s")
+value = 100.0
+show_percentage = false
+
+[node name="Ability4" type="Label" parent="AbilityContainer"]
+layout_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="AbilityContainer/Ability4"]
+texture = ExtResource("3_ls2wq")
+
+[node name="Cooldown" type="ProgressBar" parent="AbilityContainer/Ability4/Icon"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ykgxh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wd74s")
+value = 100.0
+show_percentage = false

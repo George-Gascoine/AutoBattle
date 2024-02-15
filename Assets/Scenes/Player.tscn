@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://p7foeg0ldw8c"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Player.cs" id="1_cise6"]
+[ext_resource type="Texture2D" uid="uid://nwcibbvfem8q" path="res://Assets/Sprites/Player/Walk.png" id="2_lxqos"]
+[ext_resource type="PackedScene" uid="uid://br638m8vs72dk" path="res://Assets/Scenes/ParticleEmitter.tscn" id="4_rvqu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fg80n"]
+size = Vector2(16, 33)
+
+[sub_resource type="Animation" id="Animation_dno0s"]
+resource_name = "Walk"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 30, 35), Rect2(30, 0, 30, 35), Rect2(60, 0, 30, 35), Rect2(90, 0, 30, 35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjngt"]
+_data = {
+"Walk": SubResource("Animation_dno0s")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cise6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lxqos")
+region_enabled = true
+region_rect = Rect2(0, 0, 30, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_fg80n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hjngt")
+}
+
+[node name="ParticleEmitter" parent="." instance=ExtResource("4_rvqu6")]
+z_index = -1
+position = Vector2(9, -4)

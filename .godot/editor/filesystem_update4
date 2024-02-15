@@ -1,0 +1,15 @@
+res://Assets/Scenes/World.tscn
+res://Assets/Scenes/Player.tscn
+res://Assets/Scenes/Enemy.tscn
+res://Assets/Scripts/Enemy.cs
+res://Assets/Scripts/Player.cs
+res://Assets/Scenes/GameManager.tscn
+res://Assets/Scripts/GameManager.cs
+res://Assets/Scenes/UI.tscn
+res://Assets/Themes/HealthBarTheme.tres
+res://Assets/Scripts/Managers/UI.cs
+res://Assets/Shaders/Gas.gdshader
+res://Assets/Scenes/Particle.tscn
+res://Assets/Scenes/ParticleEmitter.tscn
+res://Assets/Scripts/Managers/Particle.cs
+res://Assets/Scripts/Managers/ParticleEmitter.cs

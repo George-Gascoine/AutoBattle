@@ -1,0 +1,17 @@
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\AutoBattle.deps.json
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\AutoBattle.runtimeconfig.json
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\AutoBattle.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\AutoBattle.pdb
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.csproj.AssemblyReference.cache
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.AssemblyInfoInputs.cache
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.AssemblyInfo.cs
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.csproj.CoreCompileInputs.cache
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.csproj.Up2Date
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\refint\AutoBattle.dll
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.pdb
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.genruntimeconfig.cache
+C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\ref\AutoBattle.dll

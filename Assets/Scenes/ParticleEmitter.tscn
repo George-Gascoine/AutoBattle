@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://br638m8vs72dk"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/ParticleEmitter.cs" id="1_s2ayo"]
+[ext_resource type="PackedScene" uid="uid://bi8p12xiava8t" path="res://Assets/Scenes/Particle.tscn" id="2_1427j"]
+
+[node name="ParticleEmitter" type="Node2D"]
+script = ExtResource("1_s2ayo")
+particleScene = ExtResource("2_1427j")
+
+[node name="EmitTimer" type="Timer" parent="."]
