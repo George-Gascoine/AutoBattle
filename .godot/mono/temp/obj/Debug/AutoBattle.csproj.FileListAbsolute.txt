@@ -16,3 +16,4 @@ C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.pdb
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.genruntimeconfig.cache
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\ref\AutoBattle.dll
 C:\GitHub\AutoBattle\.godot\mono\temp\obj\Debug\AutoBattle.sourcelink.json
+C:\GITHUB\AUTOBATTLE\.godot\mono\temp\bin\Debug\Newtonsoft.Json.dll

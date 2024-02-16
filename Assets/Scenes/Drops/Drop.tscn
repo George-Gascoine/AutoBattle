@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkkd0ijpniuwk"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Drop.cs" id="1_5ilfa"]
+[ext_resource type="Texture2D" uid="uid://ct73buhf4ynst" path="res://Assets/Sprites/Drops/Drops.png" id="2_3ny61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16hx0"]
+size = Vector2(12, 12)
+
+[node name="Drop" type="Area2D"]
+z_index = -1
+script = ExtResource("1_5ilfa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3ny61")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_16hx0")
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]

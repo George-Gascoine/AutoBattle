@@ -22,3 +22,39 @@ position = Vector2(433, 52)
 
 [node name="Enemy4" parent="." instance=ExtResource("2_lymhc")]
 position = Vector2(250, 156)
+
+[node name="Enemy5" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(73, -79)
+
+[node name="Enemy6" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(7, 40)
+
+[node name="Enemy7" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(-48, -163)
+
+[node name="Enemy8" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(-231, -59)
+
+[node name="Enemy9" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(7, 296)
+
+[node name="Enemy10" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(-59, 415)
+
+[node name="Enemy11" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(-114, 212)
+
+[node name="Enemy12" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(-297, 316)
+
+[node name="Enemy13" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(549, -130)
+
+[node name="Enemy14" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(483, -11)
+
+[node name="Enemy15" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(428, -214)
+
+[node name="Enemy16" parent="." instance=ExtResource("2_lymhc")]
+position = Vector2(245, -110)

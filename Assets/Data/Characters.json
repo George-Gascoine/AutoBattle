@@ -1,0 +1,11 @@
+{
+    "character": [{
+            "name": "Pestilas",
+            "health": 100,
+            "resource": "Gas",
+            "resouceAmount": 100,
+            "speed": 40,
+            "abilityIDs": [0, 1, 2, 3]
+        }
+    ]
+}

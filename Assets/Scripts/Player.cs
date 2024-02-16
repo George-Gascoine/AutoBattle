@@ -4,11 +4,15 @@ using System.Net.Http;
 
 public partial class Player : CharacterBody2D
 {
+    public Character data;
+
     public GameManager gameManager;
+    public AbilityManager abilityManager;
     public Sprite2D sprite;
     public UI UI;
     public AnimationPlayer animationPlayer, damagePlayer;
     public ParticleEmitter emitter;
+    public Texture2D idle, walk;
 
     [Export]
     public int Speed { get; set; } = 64;
@@ -16,18 +20,46 @@ public partial class Player : CharacterBody2D
     public int health = 100;
     public float gas = 100;
     public int gasDamage = 10;
+    public int experience = 0;
+    public int level = 1;
 
     public bool takingDamage;
+
+    public class Character
+    {
+        public string name;
+        public string health;
+        public string resource;
+        public int resourceAmount;
+        public int speed;
+        public int[] abilityIDs;
+    }
+
 
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
+        abilityManager = GetNode<AbilityManager>("AbilityManager");
+        abilityManager.player = this;
         sprite = (Sprite2D)GetNode("Sprite2D");
         UI = (UI)GetNode("/root/World/UI");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
         emitter = GetNode<ParticleEmitter>("ParticleEmitter");
         takingDamage = false;
+
+        PlayerSetup();
+    }
+
+    public void PlayerSetup()
+    {
+        string spriteFolder = "res://Assets/Sprites/Characters/" + data.name;
+        idle = (Texture2D)ResourceLoader.Load(spriteFolder + "/Idle.png");
+        walk = (Texture2D)ResourceLoader.Load(spriteFolder + "/Walk.png");
+        Animation idleAnim = animationPlayer.GetAnimation("Idle");
+        Animation walkAnim = animationPlayer.GetAnimation("Walk");
+        idleAnim.TrackSetKeyValue(0, 0, idle);
+        walkAnim.TrackSetKeyValue(0, 0, walk);
     }
 
     public void GetInput()
@@ -82,9 +114,10 @@ public partial class Player : CharacterBody2D
     {
         if (area.Name == "DamageCollider")
         {
-            gameManager.CreateDamageNumber(10, Position);
-            GD.Print("Particle collision detected!");
-            TakeDamage(-10);
+            Enemy enemy = area.GetParent<Enemy>();
+            int damageTaken = enemy.damage;
+            gameManager.CreateDamageNumber(damageTaken, Position);
+            TakeDamage(-damageTaken);
         }
     }
 
@@ -110,6 +143,22 @@ public partial class Player : CharacterBody2D
         UI.UpdatePlayerGas(gas);
     }
 
+    public void ExperienceChange(int change)
+    {
+        GD.Print("XP");
+        experience += change;
+        UI.UpdatePlayerExperience(experience);
+        if (experience >= 100)
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        experience -= 100;
+        UI.UpdatePlayerGas(experience);
+    }
     public void OnAnimationEnd(string animName)
     {
         switch (animName)

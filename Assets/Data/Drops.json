@@ -1,0 +1,22 @@
+{
+	"drop": [
+		{
+			"id": 0,
+			"name": "Gas Canister",
+			"effect": "ReplenishGas",
+			"amount": 5
+		},
+		{
+			"id": 1,
+			"name": "Health Kit",
+			"effect": "ReplenishHealth",
+			"amount": 10
+		},
+		{
+			"id": 2,
+			"name": "Experience Tome",
+			"effect": "GainExperience",
+			"amount": 10
+		}
+	]
+}

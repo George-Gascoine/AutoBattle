@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvmgecuy7l5ld"]
+[gd_scene load_steps=6 format=3 uid="uid://cvmgecuy7l5ld"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/GameManager.cs" id="1_50n6k"]
-[ext_resource type="PackedScene" uid="uid://cl8ot4j6c8eth" path="res://Assets/Scenes/DamageNumber.tscn" id="2_enm33"]
+[ext_resource type="PackedScene" uid="uid://cl8ot4j6c8eth" path="res://Assets/Scenes/UI/DamageNumber.tscn" id="2_enm33"]
+[ext_resource type="JSON" path="res://Assets/Data/Characters.json" id="3_wc5w1"]
+[ext_resource type="JSON" path="res://Assets/Data/Enemies.json" id="4_jrpvu"]
+[ext_resource type="JSON" path="res://Assets/Data/Drops.json" id="5_etf8y"]
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_50n6k")
 damageNumber = ExtResource("2_enm33")
+characterJSON = ExtResource("3_wc5w1")
+enemyJSON = ExtResource("4_jrpvu")
+dropsJSON = ExtResource("5_etf8y")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://cr42n3l1ugspm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Enemy.cs" id="1_8qc5m"]
-[ext_resource type="PackedScene" uid="uid://bkkd0ijpniuwk" path="res://Assets/Scenes/Drops/GasCanister.tscn" id="2_km2qt"]
-[ext_resource type="Texture2D" uid="uid://51da8s6y7s7s" path="res://Assets/Sprites/Enemies/Enemy.png" id="2_udqst"]
+[ext_resource type="PackedScene" uid="uid://bkkd0ijpniuwk" path="res://Assets/Scenes/Drops/Drop.tscn" id="2_2frj1"]
+[ext_resource type="Texture2D" uid="uid://51da8s6y7s7s" path="res://Assets/Sprites/Enemies/Enemy/Enemy.png" id="2_in38g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itqmh"]
 size = Vector2(20, 31)
@@ -53,14 +53,14 @@ _data = {
 }
 
 [node name="Enemy" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_8qc5m")
-gasDrop = ExtResource("2_km2qt")
+itemDrop = ExtResource("2_2frj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_udqst")
+texture = ExtResource("2_in38g")
 region_enabled = true
-region_rect = Rect2(64, 0, 32, 33)
+region_rect = Rect2(0, 0, 32, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
