@@ -13,7 +13,7 @@ public partial class Particle : RigidBody2D
     {
         lifeTimer = GetNode<Timer>("LifeTimer");
         LifeTimerSetup(lifespan);
-        player = (Player)GetNode("/root/World/Player");
+        player = (Player)GetNode("/root/Level/Player");
         SetSpeed(player.Velocity);
         AddCollisionExceptionWith(player);
         AddCollisionExceptionWith(this);

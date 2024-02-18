@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://buje72u83fvyw"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/WaveManager.cs" id="1_td4m3"]
+[ext_resource type="PackedScene" uid="uid://cr42n3l1ugspm" path="res://Assets/Scenes/Enemies/Enemy.tscn" id="2_q1jr4"]
+
+[node name="WaveManager" type="Node2D"]
+script = ExtResource("1_td4m3")
+baseEnemy = ExtResource("2_q1jr4")

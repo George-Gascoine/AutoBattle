@@ -29,12 +29,15 @@ public partial class Enemy : CharacterBody2D
 
     public class EnemyData
     {
+        public int id;
         public string name;
         public int health;
         public int damage;
         public int speed;
+        public int score;
         public int[] abilityIDs;
         public int[][] lootTable; // [dropID, % chance] => [1,20]
+        public int[][] spriteData;
     }
     public override void _Ready()
     {
@@ -42,8 +45,6 @@ public partial class Enemy : CharacterBody2D
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
         sprite = GetNode<Sprite2D>("Sprite2D");
-        data = gameManager.enemyData.First(enemy => enemy.name == "Enemy");
-        EnemySetup();
         CallDeferred("FindPlayer");
     }
 
@@ -52,6 +53,7 @@ public partial class Enemy : CharacterBody2D
         string spriteFolder = "res://Assets/Sprites/Enemies/" + data.name + "/";
         Texture2D spriteTexture = (Texture2D)ResourceLoader.Load(spriteFolder + data.name +".png");
         sprite.Texture = spriteTexture;
+        SetAnimations();
         speed = data.speed;
         health = data.health;
         damage = data.damage;
@@ -81,7 +83,7 @@ public partial class Enemy : CharacterBody2D
 
     public void FindPlayer()
     { 
-        player = (Player)GetNode("/root/World/Player"); 
+        player = (Player)GetNode("/root/Level/Player"); 
         playerFound = true;
     }
 
@@ -100,6 +102,22 @@ public partial class Enemy : CharacterBody2D
         }
     }
 
+    public void SetAnimations()
+    {
+        Animation walkAnim = animationPlayer.GetAnimation("Walk");
+        Vector2 spriteSize = new(data.spriteData[0][0], data.spriteData[0][1]);
+        sprite.RegionRect = new Rect2(new Vector2(0, 0), spriteSize);
+        int spriteNo = data.spriteData[1][0];
+        //walkAnim.Clear();
+        walkAnim.Length = 0.25f * spriteNo;
+        int keyNo = 0;
+        for(float i = 0; i< walkAnim.Length; i += 0.25f)
+        {
+            walkAnim.TrackInsertKey(0, i, new Rect2());
+            walkAnim.TrackSetKeyValue(0, keyNo, new Rect2(new Vector2((spriteSize.X / spriteNo) * i, 0), new Vector2(spriteSize.X / spriteNo, spriteSize.Y)));
+            keyNo++;
+        }
+    }
 
     public void TakeDamage(int damage)
     {
@@ -151,13 +169,14 @@ public partial class Enemy : CharacterBody2D
 
     public void DestroyAndDrop()
     {
+        gameManager.ScoreUpdate(data.score);
         Drop drop = (Drop)itemDrop.Instantiate();
-        Node2D world = GetNode<Node2D>("/root/World");
+        Node2D level = GetNode<Node2D>("/root/Level");
         int roll = LootRoll();
         Drop.Data dropData = new();
         dropData = gameManager.dropData.First(findDrop => findDrop.id == roll);
         drop.data = dropData;
-        world.CallDeferred("add_child", drop);
+        level.CallDeferred("add_child", drop);
         drop.Position = Position;
         QueueFree();
     }

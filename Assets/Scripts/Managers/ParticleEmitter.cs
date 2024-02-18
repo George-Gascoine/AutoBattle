@@ -29,8 +29,8 @@ public partial class ParticleEmitter : Node2D
             player.GasChange(-.1f);
             // Create a new particle
             Particle particle = (Particle)particleScene.Instantiate();
-            Node2D world = GetNode<Node2D>("/root/World");
-            world.AddChild(particle);
+            Node2D level = GetNode<Node2D>("/root/Level");
+            level.AddChild(particle);
 
             Random modifier = new();
             // Set the position of the particle

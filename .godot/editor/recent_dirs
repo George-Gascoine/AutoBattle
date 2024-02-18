@@ -1,7 +1,8 @@
 res://Assets/Themes
-res://Assets/Sprites/UI
-res://Assets/Scripts/Managers
 res://Assets/Scenes/Managers
+res://Assets/Scripts/Managers
+res://Assets/Scripts/Managers/Stages
+res://Assets/Sprites/UI
 res://Assets/Scenes
 res://Assets/Fonts
 res://Assets/Scripts

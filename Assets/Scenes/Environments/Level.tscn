@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwnlvw52a2h33"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/Stages/Level.cs" id="1_hk8tr"]
+[ext_resource type="PackedScene" uid="uid://ba4tb8xhcqswr" path="res://Assets/Scenes/UI/UI.tscn" id="2_mpdoc"]
+[ext_resource type="PackedScene" uid="uid://p7foeg0ldw8c" path="res://Assets/Scenes/Player/Player.tscn" id="3_eujex"]
+[ext_resource type="PackedScene" uid="uid://buje72u83fvyw" path="res://Assets/Scenes/Managers/WaveManager.tscn" id="5_cpdhj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_hk8tr")
+
+[node name="UI" parent="." instance=ExtResource("2_mpdoc")]
+
+[node name="Player" parent="." instance=ExtResource("3_eujex")]
+position = Vector2(60, 98)
+
+[node name="WaveManager" parent="." instance=ExtResource("5_cpdhj")]

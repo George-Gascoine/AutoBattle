@@ -4,6 +4,7 @@ using System;
 public partial class UI : CanvasLayer
 {
     public GameManager gameManager;
+    public Label timerLabel, scoreLabel;
     public ProgressBar hpBar, gasBar, experienceBar;
     public int[] abilities;
     public Sprite2D ability1Icon, ability2Icon, ability3Icon, ability4Icon;
@@ -26,6 +27,11 @@ public partial class UI : CanvasLayer
     {
         AbilitySetup();
 
+        timerLabel = GetNode<Label>("ScoreContainer/RoundTimer");
+        scoreLabel = GetNode<Label>("ScoreContainer/RoundScore");
+        timerLabel.Text = "";
+        scoreLabel.Text = "0";
+
         hpBar = GetNode<ProgressBar>("BarContainer/HealthBar");
         hpBar.Value = 100;
 
@@ -43,6 +49,16 @@ public partial class UI : CanvasLayer
             Sprite2D icon = (Sprite2D)abilityIcons[i].GetNode("Icon");
             gameManager.GetSprite(icon, abilities[i], 16, 32, 32, "res://Assets/Sprites/Abilities/AbilityIcons.png");
         }
+    }
+
+    public void UpdateRoundTimer(string time)
+    {
+        timerLabel.Text = time;
+    }
+
+    public void UpdateRoundScore(int score)
+    {
+        scoreLabel.Text = score.ToString();
     }
 
     public void UpdatePlayerHealth(double playerHealth)

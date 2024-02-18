@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd1a2ep5l3n81"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/StartMenu.cs" id="1_xmw05"]
+[ext_resource type="Theme" uid="uid://t234vulk02e3" path="res://Assets/Themes/UITheme.tres" id="2_0mbio"]
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_xmw05")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -86.0
+offset_right = 60.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0mbio")
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "        Start"
+alignment = 0
+
+[node name="LoadButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Load
+"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options
+"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="StartButton"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="ExitButton"]

@@ -1,0 +1,55 @@
+{
+	"wave": [
+		{
+			"id": 0,
+			"enemies": [
+				1,
+				2,
+				3
+			],
+			"number": [
+				5,
+				5,
+				5
+			],
+			"locations": [
+				"left",
+				"right"
+			]
+		},
+		{
+			"id": 1,
+			"enemies": [
+				1,
+				2,
+				3
+			],
+			"number": [
+				5,
+				5,
+				5
+			],
+			"locations": [
+				"left",
+				"right"
+			]
+		},
+		{
+			"id": 2,
+			"enemies": [
+				1,
+				2,
+				3
+			],
+			"number": [
+				5,
+				5,
+				5
+			],
+			"locations": [
+				"left",
+				"right"
+			]
+		}
+	]
+}

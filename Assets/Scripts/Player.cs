@@ -7,12 +7,14 @@ public partial class Player : CharacterBody2D
     public Character data;
 
     public GameManager gameManager;
+    public Camera2D camera;
     public AbilityManager abilityManager;
     public Sprite2D sprite;
     public UI UI;
     public AnimationPlayer animationPlayer, damagePlayer;
     public ParticleEmitter emitter;
     public Texture2D idle, walk;
+    public Area2D damageArea;
 
     [Export]
     public int Speed { get; set; } = 64;
@@ -39,16 +41,16 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
+        camera = (Camera2D)GetNode("Camera2D");
         abilityManager = GetNode<AbilityManager>("AbilityManager");
         abilityManager.player = this;
+        damageArea = GetNode<Area2D>("PickUpArea");
         sprite = (Sprite2D)GetNode("Sprite2D");
-        UI = (UI)GetNode("/root/World/UI");
+        UI = (UI)GetNode("/root/Level/UI");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
         emitter = GetNode<ParticleEmitter>("ParticleEmitter");
         takingDamage = false;
-
-        PlayerSetup();
     }
 
     public void PlayerSetup()
@@ -70,6 +72,14 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        var overlapping_areas = damageArea.GetOverlappingAreas();
+        foreach(Area2D area in overlapping_areas)
+        {
+            if(area.Name == "DamageCollider" && !takingDamage)
+            {
+                TakeDamage(-area.GetParent<Enemy>().damage);
+            }
+        }
         GetInput();
         MoveAndSlide();
         AnimationCheck();
@@ -157,7 +167,7 @@ public partial class Player : CharacterBody2D
     public void LevelUp()
     {
         experience -= 100;
-        UI.UpdatePlayerGas(experience);
+        UI.UpdatePlayerExperience(experience);
     }
     public void OnAnimationEnd(string animName)
     {

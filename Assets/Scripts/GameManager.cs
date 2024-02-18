@@ -1,41 +1,65 @@
 using Godot;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
+using static WaveManager;
+using static Level;
+using System.Reflection.Emit;
+using System;
+using System.Diagnostics;
 
 public partial class GameManager : Node2D
 {
+    public Level currentLevel;
+    public int score;
+
+    public TimeSpan time = TimeSpan.Zero;
+
     public Player player;
     public UI UI { get; set; }
     [Export]
     public PackedScene damageNumber;
 
+    public bool roundStarted;
+
     [Export]
-    public Json characterJSON, enemyJSON, dropsJSON;
+    public Json characterJSON, enemyJSON, dropsJSON, levelsJSON, wavesJSON;
     public List<Player.Character> characterData;
     public List<Enemy.EnemyData> enemyData;
     public List<Drop.Data> dropData;
+    public List<LevelData> levelData;
+    public List<Wave> waveData;
     public bool paused;
+
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		paused = false;
-        player = (Player)GetNode("/root/World/Player");
-        UI = (UI)GetNode("/root/World/UI");
-        UI.CallDeferred("UISetup");
-        
-
+        roundStarted = false;
         ReadJSON();
-        player.data = characterData.First(character => character.name == "Pestilas");
-        UI.abilities = player.data.abilityIDs;
+        LevelData chosenLevel = levelData.First(level => level.id == 0);
+        StartRound(chosenLevel);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        GetInput();
+        if (roundStarted)
+        {
+            // Add the time since the last frame
+            time += TimeSpan.FromSeconds(delta);
+
+            // Format the time as hh:mm:ss
+            string timeStr = string.Format("{0:D2}:{1:D2}:{2:D2}", time.Hours, time.Minutes, time.Seconds);
+
+            // Update UI timer
+            UI.UpdateRoundTimer(timeStr);
+ 
+            // Display the time (replace this with your own display code)
+            GD.Print(timeStr);
+            GetInput();
+        }
 	}
 
     public void ReadJSON()
@@ -52,6 +76,31 @@ public partial class GameManager : Node2D
         JObject drops = JObject.Parse(dropsJSON.Data.ToString());
         List<JToken> jDrops = drops["drop"].Children().ToList();
         dropData = jDrops.Select(drop => drop.ToObject<Drop.Data>()).ToList();
+        //Level Data Parse
+        JObject levels = JObject.Parse(levelsJSON.Data.ToString());
+        List<JToken> jLevels = levels["level"].Children().ToList();
+        levelData = jLevels.Select(level => level.ToObject<LevelData>()).ToList();
+        //Wave Data Parse
+        JObject waves = JObject.Parse(wavesJSON.Data.ToString());
+        List<JToken> jWaves = waves["wave"].Children().ToList();
+        waveData = jWaves.Select(wave => wave.ToObject<Wave>()).ToList();
+    }
+
+    public void StartRound(LevelData level)
+    {
+        paused = false;
+        time = TimeSpan.Zero;
+        score = 0;
+        currentLevel = (Level)GetNode("/root/Level");
+        currentLevel.data = level;
+        player = (Player)GetNode("/root/Level/Player");
+        UI = (UI)GetNode("/root/Level/UI");
+        UI.CallDeferred("UISetup");
+
+        player.data = characterData.First(character => character.name == "Pestilas");
+        UI.abilities = player.data.abilityIDs;
+        player.CallDeferred("PlayerSetup");
+        roundStarted = true;
     }
 
     public void GetInput()
@@ -61,11 +110,18 @@ public partial class GameManager : Node2D
             player.abilityManager.UseAbility(player.data.abilityIDs[0]);
         }
     }
+
+    public void ScoreUpdate(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        UI.UpdateRoundScore(score);
+    }
+
     public void CreateDamageNumber(int damage, Vector2 position)
 	{
         DamageNumber number = (DamageNumber)damageNumber.Instantiate();
-        Node2D world = GetNode<Node2D>("/root/World");
-        world.AddChild(number);
+        Node2D level = GetNode<Node2D>("/root/Level");
+        level.AddChild(number);
 		number.Position = position - new Vector2(6,20);
 		number.damageTaken = damage;
 		number.DisplayDamage();
@@ -81,4 +137,9 @@ public partial class GameManager : Node2D
         int spriteY = (spriteID / spriteColumns);
         sprite.RegionRect = new Rect2((spriteX * width), spriteY * height, new Vector2(width, height));
     }
+
+    //private void SpawnWave()
+    //{
+
+    //}
 }
