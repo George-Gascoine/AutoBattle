@@ -57,7 +57,6 @@ public partial class GameManager : Node2D
             UI.UpdateRoundTimer(timeStr);
  
             // Display the time (replace this with your own display code)
-            GD.Print(timeStr);
             GetInput();
         }
 	}

@@ -47,7 +47,7 @@ public partial class Drop : Area2D
 		{
 			case 0:
 				// Gas Canister
-				if (player.gas < (100 - data.amount))
+				if (player.gas < 100)
 				{
 					player.GasChange(data.amount);
 					QueueFree();
@@ -55,7 +55,7 @@ public partial class Drop : Area2D
 				break;
 			case 1:
 				// Health Replenish
-                if (player.health < (100 - data.amount))
+                if (player.health < 100)
                 {
                     player.HealthChange(data.amount);
                     QueueFree();

@@ -24,7 +24,6 @@ public partial class Particle : RigidBody2D
         // Check if the area is the one you're interested in
         if (area.Name == "DamageCollider")
         {
-            GD.Print("Particle collision detected!");
             Enemy enemy = area.GetParent<Enemy>();
             enemy.TakeDamage(player.gasDamage);
         }

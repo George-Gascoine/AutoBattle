@@ -20,7 +20,7 @@ public partial class ParticleEmitter : Node2D
 
     public override void _Process(double delta)
     {
-        GD.Print(Engine.GetFramesPerSecond());
+
     }
     private void EmitParticle()
     {

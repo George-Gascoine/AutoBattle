@@ -8,7 +8,7 @@
 size = Vector2(20, 31)
 
 [sub_resource type="Animation" id="Animation_o108c"]
-resource_name = "Walk"
+resource_name = "Enemy"
 length = 0.75
 loop_mode = 1
 tracks/0/type = "value"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1i0jh"]
 _data = {
-"Walk": SubResource("Animation_o108c")
+"Enemy": SubResource("Animation_o108c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xaqb7"]
@@ -54,6 +54,7 @@ _data = {
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_mask = 3
+motion_mode = 1
 safe_margin = 0.001
 script = ExtResource("1_8qc5m")
 itemDrop = ExtResource("2_2frj1")
@@ -69,7 +70,7 @@ shape = SubResource("RectangleShape2D_itqmh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1i0jh")
+"Enemies": SubResource("AnimationLibrary_1i0jh")
 }
 
 [node name="DamageCollider" type="Area2D" parent="."]

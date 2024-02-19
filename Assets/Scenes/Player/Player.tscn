@@ -130,6 +130,7 @@ position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_fg80n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

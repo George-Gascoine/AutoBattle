@@ -9,6 +9,7 @@ public partial class Enemy : CharacterBody2D
     public EnemyData data;
     public Player player { get; set; }
     public AnimationPlayer animationPlayer { get; set; }
+    public AnimationLibrary library = new();
     public AnimationPlayer damagePlayer { get; set; }
 
     public bool takingDamage = false;
@@ -43,6 +44,7 @@ public partial class Enemy : CharacterBody2D
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        library = animationPlayer.GetAnimationLibrary("Enemies");
         damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
         sprite = GetNode<Sprite2D>("Sprite2D");
         CallDeferred("FindPlayer");
@@ -77,7 +79,10 @@ public partial class Enemy : CharacterBody2D
             {
                 ChangeDirection("right");
             }
-            animationPlayer.Play("Walk");
+            if (animationPlayer.GetAnimationLibrary("Enemies").HasAnimation(data.name))
+            {
+                animationPlayer.Play("Enemies/" + data.name);
+            }
         }
     }
 
@@ -104,18 +109,24 @@ public partial class Enemy : CharacterBody2D
 
     public void SetAnimations()
     {
-        Animation walkAnim = animationPlayer.GetAnimation("Walk");
-        Vector2 spriteSize = new(data.spriteData[0][0], data.spriteData[0][1]);
-        sprite.RegionRect = new Rect2(new Vector2(0, 0), spriteSize);
-        int spriteNo = data.spriteData[1][0];
-        //walkAnim.Clear();
-        walkAnim.Length = 0.25f * spriteNo;
-        int keyNo = 0;
-        for(float i = 0; i< walkAnim.Length; i += 0.25f)
+        if (!animationPlayer.HasAnimation("Enemies/" + data.name))
         {
-            walkAnim.TrackInsertKey(0, i, new Rect2());
-            walkAnim.TrackSetKeyValue(0, keyNo, new Rect2(new Vector2((spriteSize.X / spriteNo) * i, 0), new Vector2(spriteSize.X / spriteNo, spriteSize.Y)));
-            keyNo++;
+            Animation walkAnim = animationPlayer.GetAnimation("Enemies/Enemy");
+            var dupAnim = walkAnim.Duplicate(true);
+            walkAnim = (Animation)dupAnim;
+            Vector2 spriteSize = new(data.spriteData[0][0], data.spriteData[0][1]);
+            int spriteNo = data.spriteData[1][0];
+            sprite.RegionRect = new Rect2(new Vector2(0, 0), new Vector2(spriteSize.X / spriteNo, spriteSize.Y));
+            walkAnim.Length = 0.25f * spriteNo;
+            int keyNo = 0;
+            for (float i = 0; i < walkAnim.Length; i += 0.25f)
+            {
+                walkAnim.TrackInsertKey(0, i, new Rect2());
+                walkAnim.TrackSetKeyValue(0, keyNo, new Rect2(new Vector2((spriteSize.X / spriteNo) * keyNo, 0), new Vector2(spriteSize.X / spriteNo, spriteSize.Y)));
+                keyNo++;
+            }
+            walkAnim.ValueTrackSetUpdateMode(0, Animation.UpdateMode.Discrete);
+            library.AddAnimation(data.name, walkAnim);
         }
     }
 

@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using System.Drawing;
 using System.Net.Http;
 
@@ -15,6 +16,7 @@ public partial class Player : CharacterBody2D
     public ParticleEmitter emitter;
     public Texture2D idle, walk;
     public Area2D damageArea;
+    public string direction;
 
     [Export]
     public int Speed { get; set; } = 64;
@@ -144,6 +146,7 @@ public partial class Player : CharacterBody2D
     public void HealthChange(int change)
     {
         health += change;
+        health = Math.Max(0, Math.Min(health, 100));
         UI.UpdatePlayerHealth(health);
     }
 
@@ -155,7 +158,6 @@ public partial class Player : CharacterBody2D
 
     public void ExperienceChange(int change)
     {
-        GD.Print("XP");
         experience += change;
         UI.UpdatePlayerExperience(experience);
         if (experience >= 100)

@@ -21,6 +21,6 @@ res://Assets/Scripts/Managers/StartMenu.cs
 res://Assets/Scripts/Managers/UI.cs
 res://Assets/Scripts/Managers/WaveManager.cs
 res://Assets/Scripts/Player.cs
-res://Assets/Data/Waves.json
-res://Assets/Data/Levels.json
 res://Assets/Data/Enemies.json
+res://Assets/Data/Levels.json
+res://Assets/Data/Waves.json

@@ -3,7 +3,7 @@
 		{
 			"id": 1,
 			"name": "Enemy",
-			"health": 100,
+			"health": 30,
 			"damage": 10,
 			"speed": 32,
 			"score": 100,
@@ -38,9 +38,9 @@
 		{
 			"id": 2,
 			"name": "Enemy2",
-			"health": 100,
+			"health": 20,
 			"damage": 10,
-			"speed": 32,
+			"speed": 40,
 			"score": 100,
 			"abilityIDs": [
 				2,
@@ -62,20 +62,20 @@
 			],
 			"spriteData": [
 				[
-					150,
-					28
+					108,
+					32
 				],
 				[
-					5
+					4
 				]
 			]
 		},
 		{
 			"id": 3,
 			"name": "Enemy3",
-			"health": 100,
+			"health": 40,
 			"damage": 10,
-			"speed": 32,
+			"speed": 20,
 			"score": 100,
 			"abilityIDs": [
 				2,

@@ -75,7 +75,6 @@ public partial class WaveManager : Node2D
 
     public void SpawnWaves(Wave waveToSpawn)
     {
-        GD.Print("Spawning");
         Level levelNode = GetNode<Level>("/root/Level");
         int noOfSpawns = 0;
         for (int a = 0; a < waveToSpawn.enemies.Length; a++)
@@ -83,42 +82,95 @@ public partial class WaveManager : Node2D
             noOfSpawns += waveToSpawn.number[a];
         }
         List<Vector2> spawnPoints = new();
-        spawnPoints = GetSpawnPoints(noOfSpawns);
+        spawnPoints = GetSpawnPoints(noOfSpawns, gameManager.player.Velocity);
         for (int i = 0; i < waveToSpawn.enemies.Length; i++)
         {
             for (int j = 0; j < waveToSpawn.number[i]; j++)
-            { 
-                Enemy.EnemyData enemyData = gameManager.enemyData.First(enemy => enemy.id == waveToSpawn.enemies[i]);
-                Enemy instance = (Enemy)baseEnemy.Instantiate();
-                instance.data = enemyData;
-                Vector2 chosenPosition = spawnPoints[random.Next(spawnPoints.Count)];
-                instance.Position = chosenPosition;
-                spawnPoints.Remove(chosenPosition);
-                instance.CallDeferred("EnemySetup");
-                levelNode.AddChild(instance);
+            {
+                if(GetTree().GetNodesInGroup("Enemies").Count < 400)
+                {
+                    Enemy.EnemyData enemyData = gameManager.enemyData.First(enemy => enemy.id == waveToSpawn.enemies[i]);
+                    Enemy instance = (Enemy)baseEnemy.Instantiate();
+                    instance.data = enemyData;
+                    Vector2 chosenPosition = spawnPoints[random.Next(spawnPoints.Count)];
+                    instance.Position = chosenPosition;
+                    spawnPoints.Remove(chosenPosition);
+                    instance.CallDeferred("EnemySetup");
+                    levelNode.AddChild(instance);
+                    instance.AddToGroup("Enemies");
+                    GD.Print("Enemy Number " + GetTree().GetNodesInGroup("Enemies").Count);
+                }
             }
         }
     }
 
-    public List<Vector2> GetSpawnPoints(int numberOfPoints)
+    public List<Vector2> GetSpawnPoints(int numberOfPoints, Vector2 direction)
     {
         // Get the camera size
         Vector2 cameraSize = gameManager.player.camera.GetViewportRect().Size;
 
         // Create the Rect2
-        var rect = new Rect2(new Vector2(cameraSize.X * 2 / 3, 0), new Vector2(cameraSize.X / 3, cameraSize.Y));
+        Rect2 rect;
+        float distanceBetweenPoints;
+        if (direction.Y > 0) // South
+        {
+            // Calculate the distance between each point
+            rect = new Rect2(new Vector2(gameManager.player.GlobalPosition.X - cameraSize.X / 2, gameManager.player.GlobalPosition.Y + cameraSize.Y / 2), new Vector2(cameraSize.X * 2, cameraSize.Y / 3));
+            distanceBetweenPoints = rect.Size.X / (numberOfPoints - 1);
+        }
+        else if (direction.Y < 0) // North
+        {
+            rect = new Rect2(new Vector2(gameManager.player.GlobalPosition.X - cameraSize.X / 2, gameManager.player.GlobalPosition.Y - cameraSize.Y / 2), new Vector2(cameraSize.X * 2, cameraSize.Y / 3));
+            distanceBetweenPoints = rect.Size.X / (numberOfPoints - 1);
+        }
+        else // East or West
+        {
+            rect = new Rect2(new Vector2(gameManager.player.GlobalPosition.X + cameraSize.X / 2, gameManager.player.GlobalPosition.Y - cameraSize.Y / 2), new Vector2(cameraSize.X / 3, cameraSize.Y * 2));
+            distanceBetweenPoints = rect.Size.Y / (numberOfPoints - 1);
+        }
 
         // Calculate the distance between each point
-        var distanceBetweenPoints = rect.Size.Y / (numberOfPoints - 1);
+        // var distanceBetweenPoints = rect.Size.Y / (numberOfPoints - 1);
 
         // Generate the points
         List<Vector2> points = new();
         for (int i = 0; i < numberOfPoints; i++)
         {
-            Vector2 pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
+            Vector2 pointToAdd = new();
+            if (direction.Y < 0 || direction.Y > 0)
+            {
+                pointToAdd = new(rect.Position.X + i * distanceBetweenPoints, rect.Position.Y);
+            }
+            else if (direction.X > 0)
+            {
+                pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
+            }
+            else if (direction.X < 0)
+            {
+                pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
+                Vector2 cameraPosition = gameManager.player.camera.GlobalPosition;
+                pointToAdd = cameraPosition - pointToAdd;
+            }
             points.Add(pointToAdd);
         }
 
         return points;
+    }
+
+    public Vector2 AdjustForCamera(Vector2 point, Vector2 direction)
+    {
+        Vector2 pointToAdd = new();
+        //// Get the camera position
+        Vector2 cameraPosition = gameManager.player.camera.GlobalPosition;
+        //if (direction.Y < 0 || direction.X < 0)
+        //{
+        //    pointToAdd = cameraPosition - point;
+        //}
+        //else if (direction.Y > 0 || direction.X > 0)
+        //{
+        //    pointToAdd = cameraPosition + point;
+        //}
+        pointToAdd = cameraPosition + point;
+        return pointToAdd;
     }
 }
