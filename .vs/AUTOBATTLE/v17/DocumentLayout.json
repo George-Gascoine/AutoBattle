@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\GitHub\\AutoBattle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\wavemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\drop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\drop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\particle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,24 +23,12 @@
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\stages\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\stages\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\GasShield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\startmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\startmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\damagenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\damagenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\gasgrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\gasgrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,155 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StartMenu.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\StartMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\StartMenu.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\StartMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\StartMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "GasShield.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\GasShield.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\GasShield.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T15:35:44.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WaveManager.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\WaveManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\WaveManager.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\WaveManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\WaveManager.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAAAgwJcAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T15:11:39.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Level.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Stages\\Level.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Stages\\Level.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Stages\\Level.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\Stages\\Level.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T14:44:35.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Drop.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Drop.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Drop.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Drop.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Drop.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAlwDEAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-16T15:32:34.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DamageNumber.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\DamageNumber.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DamageNumber.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\DamageNumber.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\DamageNumber.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T21:10:26.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Particle.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Particle.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\Particle.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAewBkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T14:46:30.799Z",
+              "WhenOpened": "2024-02-20T19:51:11.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "GasGrenade.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasGrenade.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\GasGrenade.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasGrenade.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\GasGrenade.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:50:27.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Particle.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Particle.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\Particle.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T11:31:46.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Enemy.cs",
               "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAvwG8AAAA3AAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAEwFMAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T15:49:32.236Z",
+              "WhenOpened": "2024-02-20T11:11:51.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ParticleEmitter.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\ParticleEmitter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ParticleEmitter.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\ParticleEmitter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\ParticleEmitter.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAewBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T14:43:35.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UI.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\UI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\UI.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\UI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\UI.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAwwCAAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T11:41:02.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAnwDoAAABJAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwDYAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T11:10:18.036Z",
+              "WhenOpened": "2024-02-20T10:46:49.102Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "AbilityManager.cs",
               "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\AbilityManager.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Managers\\AbilityManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAASAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwC0AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-16T10:32:14.526Z"
+              "WhenOpened": "2024-02-20T10:46:35.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAUwEsAAAAFAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAWwEAAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-14T15:25:44.235Z",
               "EditorCaption": ""

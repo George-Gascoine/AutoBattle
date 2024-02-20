@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://crx86fgaxqay6"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/AbilityManager.cs" id="1_g5dwx"]
+[ext_resource type="PackedScene" uid="uid://dor1mi45wy7ck" path="res://Assets/Scenes/Player/GasGrenade.tscn" id="2_v7yiw"]
+[ext_resource type="PackedScene" uid="uid://dmjybhcc5ykjr" path="res://Assets/Scenes/Player/GasShield.tscn" id="3_kwwcv"]
+
+[node name="AbilityManager" type="Node2D"]
+script = ExtResource("1_g5dwx")
+gasGrenade = ExtResource("2_v7yiw")
+gasShield = ExtResource("3_kwwcv")

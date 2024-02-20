@@ -13,6 +13,9 @@ public partial class Enemy : CharacterBody2D
     public AnimationPlayer damagePlayer { get; set; }
 
     public bool takingDamage = false;
+
+    public Timer pushbackTimer;
+    public bool pushBack = false;
     [Export]
     public int speed { get; set; } = 32;
 
@@ -46,6 +49,12 @@ public partial class Enemy : CharacterBody2D
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         library = animationPlayer.GetAnimationLibrary("Enemies");
         damagePlayer = GetNode<AnimationPlayer>("DamagePlayer");
+        pushbackTimer = GetNode<Timer>("PushbackTimer");
+        pushbackTimer.WaitTime = 1f;  // Set the time interval for direction change or pause
+        pushbackTimer.Timeout += () =>
+        {
+            pushBack = false;
+        };
         sprite = GetNode<Sprite2D>("Sprite2D");
         CallDeferred("FindPlayer");
     }
@@ -63,10 +72,16 @@ public partial class Enemy : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (playerFound)
+        if (playerFound && !pushBack)
         {
             _target = player.Position;
             Velocity = Position.DirectionTo(_target) * speed;
+            MoveAndSlide();
+        }
+        else if (playerFound && pushBack) 
+        {
+            _target = player.Position;
+            Velocity = -Position.DirectionTo(_target) * (speed * 1.5f);
             MoveAndSlide();
         }
         if (!gameManager.paused && !takingDamage) 
@@ -142,6 +157,15 @@ public partial class Enemy : CharacterBody2D
             }
             takingDamage = true;
             damagePlayer.Play("TakeDamage");
+        }
+    }
+
+    public void PushBack(int strength)
+    {
+        if (!pushBack)
+        {
+            pushBack = true;
+            pushbackTimer.Start();
         }
     }
 

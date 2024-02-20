@@ -12,7 +12,6 @@ public partial class UI : CanvasLayer
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
-        UISetup();
         //		ability1CD = GetNode<Sprite2D>("Ability1CD");
     }
 

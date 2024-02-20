@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player.cs" id="1_cise6"]
 [ext_resource type="Texture2D" uid="uid://nwcibbvfem8q" path="res://Assets/Sprites/Characters/Pestilas/Walk.png" id="2_lxqos"]
-[ext_resource type="Script" path="res://Assets/Scripts/Managers/AbilityManager.cs" id="4_b7wxa"]
+[ext_resource type="PackedScene" uid="uid://crx86fgaxqay6" path="res://Assets/Scenes/Managers/AbilityManager.tscn" id="4_rqv15"]
 [ext_resource type="PackedScene" uid="uid://br638m8vs72dk" path="res://Assets/Scenes/Player/ParticleEmitter.tscn" id="4_rvqu6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg80n"]
@@ -152,8 +152,17 @@ libraries = {
 "": SubResource("AnimationLibrary_vyl2q")
 }
 
-[node name="AbilityManager" type="Node2D" parent="."]
-script = ExtResource("4_b7wxa")
+[node name="AbilityManager" parent="." instance=ExtResource("4_rqv15")]
+
+[node name="Cooldowns" type="Node2D" parent="."]
+
+[node name="Ability1CD" type="Timer" parent="Cooldowns"]
+
+[node name="Ability2CD" type="Timer" parent="Cooldowns"]
+
+[node name="Ability3CD" type="Timer" parent="Cooldowns"]
+
+[node name="Ability4CD" type="Timer" parent="Cooldowns"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationEnd"]
 [connection signal="area_entered" from="PickUpArea" to="." method="OnAreaEntered"]

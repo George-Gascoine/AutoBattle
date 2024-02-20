@@ -1,7 +1,10 @@
-res://Assets/Scenes/Enemies/Enemy.tscn
+res://Assets/Scenes/Player/Player.tscn
 res://Assets/Themes/HealthBarTheme.tres
 res://Assets/Shaders/Gas.gdshader
-res://Assets/Scenes/Player/Player.tscn
+res://Assets/Scenes/Managers/AbilityManager.tscn
+res://Assets/Scenes/Player/GasGrenade.tscn
+res://Assets/Scenes/Player/GasShield.tscn
+res://Assets/Scenes/Enemies/Enemy.tscn
 res://Assets/Scenes/Drops/Drop.tscn
 res://Assets/Scenes/Managers/GameManager.tscn
 res://Assets/Scenes/Player/Particle.tscn
@@ -14,6 +17,8 @@ res://Assets/Scripts/Enemy.cs
 res://Assets/Scripts/GameManager.cs
 res://Assets/Scripts/Managers/AbilityManager.cs
 res://Assets/Scripts/Managers/DamageNumber.cs
+res://Assets/Scripts/Managers/GasGrenade.cs
+res://Assets/Scripts/Managers/GasShield.cs
 res://Assets/Scripts/Managers/Particle.cs
 res://Assets/Scripts/Managers/ParticleEmitter.cs
 res://Assets/Scripts/Managers/Stages/Level.cs
@@ -21,6 +26,3 @@ res://Assets/Scripts/Managers/StartMenu.cs
 res://Assets/Scripts/Managers/UI.cs
 res://Assets/Scripts/Managers/WaveManager.cs
 res://Assets/Scripts/Player.cs
-res://Assets/Data/Enemies.json
-res://Assets/Data/Levels.json
-res://Assets/Data/Waves.json

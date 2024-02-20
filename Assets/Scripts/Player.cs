@@ -17,6 +17,8 @@ public partial class Player : CharacterBody2D
     public Texture2D idle, walk;
     public Area2D damageArea;
     public string direction;
+    public bool[] abilityActives = new bool[4];
+    public Timer[] abilityCooldowns = new Timer[4];
 
     [Export]
     public int Speed { get; set; } = 64;
@@ -57,6 +59,18 @@ public partial class Player : CharacterBody2D
 
     public void PlayerSetup()
     {
+        for(int i = 0; i < 3; i++)
+        {
+            abilityActives[i] = false;
+            abilityCooldowns[i] = GetNode<Timer>("Cooldowns/" + "Ability" + (i + 1).ToString() + "CD");
+            abilityCooldowns[i].WaitTime = 10f;
+            abilityCooldowns[i].Timeout += () =>
+            {
+                GD.Print("Ability " + i.ToString());
+                abilityActives[i] = false;
+            };
+        }
+
         string spriteFolder = "res://Assets/Sprites/Characters/" + data.name;
         idle = (Texture2D)ResourceLoader.Load(spriteFolder + "/Idle.png");
         walk = (Texture2D)ResourceLoader.Load(spriteFolder + "/Walk.png");
@@ -70,6 +84,31 @@ public partial class Player : CharacterBody2D
     {
         Vector2 inputDirection = Input.GetVector("Left", "Right", "Up", "Down");
         Velocity = inputDirection * Speed;
+        if (Input.IsActionJustPressed("1") && abilityActives[0] == false)
+        {
+            abilityCooldowns[0].Start();
+            abilityActives[0] = true;
+            abilityManager.UseAbility(data.abilityIDs[0]);
+        }
+        if (Input.IsActionJustPressed("2") && abilityActives[1] == false)
+        {
+            abilityCooldowns[1].Start();
+            abilityActives[1] = true;
+            abilityManager.UseAbility(data.abilityIDs[1]);
+        }
+        if (Input.IsActionJustPressed("3") && abilityActives[2] == false)
+        {
+            GD.Print("BOOL " + abilityActives[3]);
+            abilityCooldowns[2].Start();
+            abilityActives[2] = true;
+            abilityManager.UseAbility(data.abilityIDs[2]);
+        }
+        if (Input.IsActionJustPressed("4") && abilityActives[3] == false)
+        {
+            abilityCooldowns[3].Start();
+            abilityActives[3] = true;
+            abilityManager.UseAbility(data.abilityIDs[3]);
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -86,7 +125,6 @@ public partial class Player : CharacterBody2D
         MoveAndSlide();
         AnimationCheck();
     }
-
     public void AnimationCheck()
     {
         if (Velocity != new Vector2(0, 0))

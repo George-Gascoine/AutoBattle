@@ -33,7 +33,6 @@ public partial class WaveManager : Node2D
         gameManager = (GameManager)GetNode("/root/GameManager");
         parentLevel = GetParent<Level>();
         waveChecked = false;
-        PrepareWaves();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -141,15 +140,15 @@ public partial class WaveManager : Node2D
             {
                 pointToAdd = new(rect.Position.X + i * distanceBetweenPoints, rect.Position.Y);
             }
-            else if (direction.X > 0)
-            {
-                pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
-            }
             else if (direction.X < 0)
             {
                 pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
                 Vector2 cameraPosition = gameManager.player.camera.GlobalPosition;
                 pointToAdd = cameraPosition - pointToAdd;
+            }
+            else
+            {
+                pointToAdd = new(rect.Position.X, rect.Position.Y + i * distanceBetweenPoints);
             }
             points.Add(pointToAdd);
         }

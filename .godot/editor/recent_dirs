@@ -1,6 +1,7 @@
-res://Assets/Themes
-res://Assets/Scenes/Managers
 res://Assets/Scripts/Managers
+res://Assets/Scenes/Player
+res://Assets/Scenes/Managers
+res://Assets/Themes
 res://Assets/Scripts/Managers/Stages
 res://Assets/Sprites/UI
 res://Assets/Scenes

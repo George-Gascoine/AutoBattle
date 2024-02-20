@@ -84,5 +84,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ib1ra")
 }
 
+[node name="PushbackTimer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationEnd"]
 [connection signal="animation_finished" from="DamagePlayer" to="." method="OnAnimationEnd"]

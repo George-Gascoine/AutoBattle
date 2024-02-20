@@ -23,7 +23,6 @@ public partial class Level : Node2D
 	public override void _Ready()
 	{
 		waveManager = GetNode<WaveManager>("WaveManager");
-		waveManager.CallDeferred("PrepareWaves");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

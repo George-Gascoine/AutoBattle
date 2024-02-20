@@ -38,8 +38,6 @@ public partial class GameManager : Node2D
 	{
         roundStarted = false;
         ReadJSON();
-        LevelData chosenLevel = levelData.First(level => level.id == 0);
-        StartRound(chosenLevel);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,10 +52,7 @@ public partial class GameManager : Node2D
             string timeStr = string.Format("{0:D2}:{1:D2}:{2:D2}", time.Hours, time.Minutes, time.Seconds);
 
             // Update UI timer
-            UI.UpdateRoundTimer(timeStr);
- 
-            // Display the time (replace this with your own display code)
-            GetInput();
+            UI.UpdateRoundTimer(timeStr);          
         }
 	}
 
@@ -85,30 +80,28 @@ public partial class GameManager : Node2D
         waveData = jWaves.Select(wave => wave.ToObject<Wave>()).ToList();
     }
 
-    public void StartRound(LevelData level)
+    public async void StartRound(int levelID)
     {
+        await ToSignal(GetTree().CreateTimer(0.01f), "timeout");
+        LevelData chosenLevel = levelData.First(level => level.id == levelID);
         paused = false;
         time = TimeSpan.Zero;
         score = 0;
         currentLevel = (Level)GetNode("/root/Level");
-        currentLevel.data = level;
+        currentLevel.data = chosenLevel;
         player = (Player)GetNode("/root/Level/Player");
         UI = (UI)GetNode("/root/Level/UI");
         UI.CallDeferred("UISetup");
 
         player.data = characterData.First(character => character.name == "Pestilas");
         UI.abilities = player.data.abilityIDs;
+        UI.CallDeferred("UISetup");
         player.CallDeferred("PlayerSetup");
+        currentLevel.waveManager.CallDeferred("PrepareWaves");
         roundStarted = true;
     }
 
-    public void GetInput()
-    {
-        if (Input.IsActionJustPressed("1"))
-        {
-            player.abilityManager.UseAbility(player.data.abilityIDs[0]);
-        }
-    }
+
 
     public void ScoreUpdate(int scoreToAdd)
     {
