@@ -7,28 +7,8 @@
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\particle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\particle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Managers\\GasShield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\gasgrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\gasgrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,86 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GasShield.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\GasShield.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasShield.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\GasShield.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:51:11.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GasGrenade.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasGrenade.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\GasGrenade.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\GasGrenade.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\GasGrenade.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:50:27.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Particle.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Particle.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\Particle.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\Particle.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T11:31:46.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Enemy.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Enemy.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAEwFMAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T11:11:51.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwDYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T10:46:49.102Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AbilityManager.cs",
-              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\AbilityManager.cs",
-              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\AbilityManager.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwC0AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T10:46:35.926Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -126,9 +28,22 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAWwEAAAAAiAAAA",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAcwHMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-14T15:25:44.235Z",
+              "WhenOpened": "2024-02-22T16:00:43.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAQwDgAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T10:46:49.102Z",
               "EditorCaption": ""
             }
           ]

@@ -25,7 +25,7 @@ public partial class Particle : RigidBody2D
         if (area.Name == "DamageCollider")
         {
             Enemy enemy = area.GetParent<Enemy>();
-            enemy.TakeDamage(player.gasDamage);
+            enemy.TakeDamage(player.damage);
         }
     }
 

@@ -20,15 +20,19 @@ public partial class GameManager : Node2D
     [Export]
     public PackedScene damageNumber;
 
+    [Export]
+    public PackedScene skillTree;
+
     public bool roundStarted;
 
     [Export]
-    public Json characterJSON, enemyJSON, dropsJSON, levelsJSON, wavesJSON;
+    public Json characterJSON, enemyJSON, dropsJSON, levelsJSON, wavesJSON, skillsJSON;
     public List<Player.Character> characterData;
     public List<Enemy.EnemyData> enemyData;
     public List<Drop.Data> dropData;
     public List<LevelData> levelData;
     public List<Wave> waveData;
+    public List<SkillManager.Skill> skillData;
     public bool paused;
 
 
@@ -43,6 +47,22 @@ public partial class GameManager : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        if (Input.IsActionJustPressed("Escape"))
+        {
+            if (!GetTree().Paused)
+            {
+                GetTree().Paused = true;
+                SkillManager tree = (SkillManager)skillTree.Instantiate();
+                tree.GlobalPosition = new Vector2(0, 0);
+                AddChild(tree);
+            }
+            else
+            {
+                SkillManager destroy = GetNode<SkillManager>("SkillTree");
+                GetTree().Paused = false;
+                destroy.QueueFree();
+            }
+        }
         if (roundStarted)
         {
             // Add the time since the last frame
@@ -78,6 +98,10 @@ public partial class GameManager : Node2D
         JObject waves = JObject.Parse(wavesJSON.Data.ToString());
         List<JToken> jWaves = waves["wave"].Children().ToList();
         waveData = jWaves.Select(wave => wave.ToObject<Wave>()).ToList();
+        //Skill Data Parse
+        JObject skills = JObject.Parse(skillsJSON.Data.ToString());
+        List<JToken> jSkills = skills["skill"].Children().ToList();
+        skillData = jSkills.Select(skill => skill.ToObject<SkillManager.Skill>()).ToList();
     }
 
     public async void StartRound(int levelID)
@@ -109,7 +133,7 @@ public partial class GameManager : Node2D
         UI.UpdateRoundScore(score);
     }
 
-    public void CreateDamageNumber(int damage, Vector2 position)
+    public void CreateDamageNumber(float damage, Vector2 position)
 	{
         DamageNumber number = (DamageNumber)damageNumber.Instantiate();
         Node2D level = GetNode<Node2D>("/root/Level");

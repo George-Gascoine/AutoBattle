@@ -3,7 +3,7 @@ using System;
 
 public partial class DamageNumber : Label
 {
-	public int damageTaken;
+	public float damageTaken;
 	public Timer destroyTimer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

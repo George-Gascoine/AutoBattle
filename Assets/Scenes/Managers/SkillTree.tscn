@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://fvjl4siumhfd"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Managers/SkillManager.cs" id="1_c3dsj"]
+[ext_resource type="PackedScene" uid="uid://c5nb35fy13gpk" path="res://Assets/Scenes/UI/SkillButton.tscn" id="1_tkwi8"]
+[ext_resource type="Texture2D" uid="uid://cfmje0hd6i67w" path="res://Assets/Sprites/UI/DamageSkillIcon.png" id="2_30fut"]
+[ext_resource type="Texture2D" uid="uid://dk141kfsy6kt6" path="res://Assets/Sprites/UI/HealthSkillIcon.png" id="3_xy055"]
+
+[node name="SkillTree" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 40.0
+script = ExtResource("1_c3dsj")
+
+[node name="SkillButton" parent="." instance=ExtResource("1_tkwi8")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -10.0
+offset_right = 10.0
+grow_horizontal = 2
+disabled = false
+skillID = 1
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_tkwi8")]
+texture_filter = 1
+layout_mode = 0
+offset_left = -48.0
+offset_top = 46.0
+offset_right = -28.0
+offset_bottom = 66.0
+texture_normal = ExtResource("2_30fut")
+skillID = 2
+
+[node name="SkillButton3" parent="SkillButton" instance=ExtResource("1_tkwi8")]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 46.0
+offset_right = 55.0
+offset_bottom = 66.0
+texture_normal = ExtResource("2_30fut")
+skillID = 2
+
+[node name="SkillButton4" parent="SkillButton/SkillButton3" instance=ExtResource("1_tkwi8")]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 57.0
+offset_right = 19.0
+offset_bottom = 77.0
+texture_normal = ExtResource("3_xy055")
+skillID = 3

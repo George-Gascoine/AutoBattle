@@ -19,7 +19,7 @@ public partial class Enemy : CharacterBody2D
     [Export]
     public int speed { get; set; } = 32;
 
-    public int health = 100;
+    public float health = 100;
 
     public int damage { get; set; }
 
@@ -145,7 +145,7 @@ public partial class Enemy : CharacterBody2D
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (!takingDamage)
         {

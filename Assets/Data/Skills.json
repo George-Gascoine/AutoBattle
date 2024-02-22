@@ -1,0 +1,55 @@
+{
+	"skill": [
+		{
+			"id": 1,
+			"name": "Speed Boost",
+			"description": "Increases movement speed by 10%.",
+			"requirements": [
+				"level 1"
+			],
+			"connections": [
+				2
+			],
+			"levels": 3,
+			"effect": {
+				"type": "increase",
+				"attribute": "MovementSpeed",
+				"amount": 0.1
+			}
+		},
+		{
+			"id": 2,
+			"name": "Damage Boost",
+			"description": "Increases damage by 10%.",
+			"requirements": [
+				"level 1"
+			],
+			"connections": [
+				3
+			],
+			"levels": 3,
+			"effect": {
+				"type": "increase",
+				"attribute": "Damage",
+				"amount": 0.1
+			}
+		},
+		{
+			"id": 3,
+			"name": "Health Boost",
+			"description": "Increases health by 10%.",
+			"requirements": [
+				"level 1"
+			],
+			"connections": [
+				4
+			],
+			"levels": 3,
+			"effect": {
+				"type": "increase",
+				"attribute": "Health",
+				"amount": 0.1
+			}
+		}
+	]
+}

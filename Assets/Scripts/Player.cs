@@ -21,11 +21,11 @@ public partial class Player : CharacterBody2D
     public Timer[] abilityCooldowns = new Timer[4];
 
     [Export]
-    public int Speed { get; set; } = 64;
+    public float Speed { get; set; } = 64;
 
     public int health = 100;
     public float gas = 100;
-    public int gasDamage = 10;
+    public float damage = 10;
     public int experience = 0;
     public int level = 1;
 
@@ -113,6 +113,7 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        GD.Print(Speed);
         var overlapping_areas = damageArea.GetOverlappingAreas();
         foreach(Area2D area in overlapping_areas)
         {

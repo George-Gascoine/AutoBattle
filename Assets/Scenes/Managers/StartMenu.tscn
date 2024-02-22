@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd1a2ep5l3n81"]
+[gd_scene load_steps=4 format=3 uid="uid://dd1a2ep5l3n81"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Managers/StartMenu.cs" id="1_xmw05"]
 [ext_resource type="Theme" uid="uid://t234vulk02e3" path="res://Assets/Themes/UITheme.tres" id="2_0mbio"]
+[ext_resource type="Texture2D" uid="uid://dfurwwmj2w2ns" path="res://Assets/Sprites/UI/Art/Splash.png" id="2_br0bb"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_xmw05")
+
+[node name="Splash" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 75.0
+offset_bottom = 58.0
+texture = ExtResource("2_br0bb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
