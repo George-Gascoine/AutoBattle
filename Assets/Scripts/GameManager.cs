@@ -26,13 +26,14 @@ public partial class GameManager : Node2D
     public bool roundStarted;
 
     [Export]
-    public Json characterJSON, enemyJSON, dropsJSON, levelsJSON, wavesJSON, skillsJSON;
+    public Json characterJSON, enemyJSON, dropsJSON, levelsJSON, wavesJSON, skillsJSON, abilitiesJSON;
     public List<Player.Character> characterData;
     public List<Enemy.EnemyData> enemyData;
     public List<Drop.Data> dropData;
     public List<LevelData> levelData;
     public List<Wave> waveData;
     public List<SkillManager.Skill> skillData;
+    public List<AbilityManager.Ability> abilityData;
     public bool paused;
 
 
@@ -47,23 +48,7 @@ public partial class GameManager : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (Input.IsActionJustPressed("Escape"))
-        {
-            if (!GetTree().Paused)
-            {
-                GetTree().Paused = true;
-                SkillManager tree = (SkillManager)skillTree.Instantiate();
-                tree.GlobalPosition = new Vector2(0, 0);
-                AddChild(tree);
-            }
-            else
-            {
-                SkillManager destroy = GetNode<SkillManager>("SkillTree");
-                GetTree().Paused = false;
-                destroy.QueueFree();
-            }
-        }
-        if (roundStarted)
+        if (roundStarted && !GetTree().Paused)
         {
             // Add the time since the last frame
             time += TimeSpan.FromSeconds(delta);
@@ -72,7 +57,7 @@ public partial class GameManager : Node2D
             string timeStr = string.Format("{0:D2}:{1:D2}:{2:D2}", time.Hours, time.Minutes, time.Seconds);
 
             // Update UI timer
-            UI.UpdateRoundTimer(timeStr);          
+            UI.UpdateRoundTimer(timeStr);
         }
 	}
 
@@ -82,6 +67,10 @@ public partial class GameManager : Node2D
         JObject characters = JObject.Parse(characterJSON.Data.ToString());
         List<JToken> jCharacters = characters["character"].Children().ToList();
         characterData = jCharacters.Select(character => character.ToObject<Player.Character>()).ToList();
+        //Ability Data Parse
+        JObject abilities = JObject.Parse(abilitiesJSON.Data.ToString());
+        List<JToken> jAbilities = abilities["ability"].Children().ToList();
+        abilityData = jAbilities.Select(ability => ability.ToObject<AbilityManager.Ability>()).ToList();
         //Enemy Data Parse
         JObject enemies = JObject.Parse(enemyJSON.Data.ToString());
         List<JToken> jEnemies = enemies["enemy"].Children().ToList();
@@ -153,6 +142,19 @@ public partial class GameManager : Node2D
         int spriteY = (spriteID / spriteColumns);
         sprite.RegionRect = new Rect2((spriteX * width), spriteY * height, new Vector2(width, height));
     }
+
+    public void PauseGame()
+    {
+        if (!GetTree().Paused)
+        {
+            GetTree().Paused = true;
+        }
+        else
+        {
+            GetTree().Paused = false;
+        }
+    }
+
 
     //private void SpawnWave()
     //{

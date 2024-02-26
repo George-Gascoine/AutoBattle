@@ -16,6 +16,7 @@ public partial class AbilityManager : Node
         public int id;
         public string name;
         public string effect;
+        public string type;
         public int cooldown;
     }
     // Called when the node enters the scene tree for the first time.
@@ -35,6 +36,7 @@ public partial class AbilityManager : Node
         {
             case 0:
                 player.emitter.emitting = !player.emitter.emitting;
+                GD.Print("emitting " + player.emitter.emitting);
                 break;
             case 1:
                 GasGrenade grenade = (GasGrenade)gasGrenade.Instantiate();

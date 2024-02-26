@@ -1,9 +1,11 @@
 using Godot;
+using System;
 using System.Linq;
 
 public partial class SkillButton : TextureButton
 {
     public GameManager gameManager;
+    public Player player;
     [Export]
     public int skillID;
     public SkillManager skillManager;
@@ -16,6 +18,8 @@ public partial class SkillButton : TextureButton
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
+        //skillManager
+        player = GetNode<Player>("/root/Level/Player");
         skill = gameManager.skillData.First(skill => skill.id == skillID);
         tooltip = GetNode<Panel>("Tooltip");
         tooltipText = tooltip.GetChild(0).GetNode<Label>("TooltipText");
@@ -24,7 +28,6 @@ public partial class SkillButton : TextureButton
         label.Text = level.ToString() + "/" + skill.levels.ToString();
         DrawSkillLine();
         SetTooltipText();
-        GD.Print(GlobalPosition);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +59,8 @@ public partial class SkillButton : TextureButton
             SelfModulate = new Color(1, 1, 1, 1);
             line.DefaultColor = new Color(0.6f, 0.8f, 0.2f, 1);
 
-            skill.GetEffectAction();
+            Action<Player> effectAction = skill.GetEffectAction();
+            effectAction(player);
 
             var derivedSkills = GetChildren();
             foreach (var skillButton in derivedSkills)

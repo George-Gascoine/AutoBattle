@@ -1,0 +1,32 @@
+{
+	"ability": [
+		{
+			"id": 0,
+			"name": "Toxic Gas",
+			"Effect": "Emits a stream of toxic gas",
+			"Type": "Toggle",
+			"Cooldown": -1
+		},
+		{
+			"id": 1,
+			"name": "Gas Grenade",
+			"Effect": "Throws a powerful gas grenade",
+			"Type": "Cooldown",
+			"Cooldown": 10
+		},
+		{
+			"id": 2,
+			"name": "Gaseous Shield",
+			"Effect": "Shields Pestilas in gas",
+			"Type": "Cooldown",
+			"Cooldown": 8
+		},
+		{
+			"id": 3,
+			"name": "Overload",
+			"Effect": "Pestilas loses control and becomes a manifestation of gas itself",
+			"Type": "Cooldown",
+			"Cooldown": 20
+		}
+	]
+}

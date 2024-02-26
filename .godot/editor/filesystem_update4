@@ -1,9 +1,11 @@
 res://Assets/Scenes/Player/Player.tscn
+res://Assets/Themes/HealthBarTheme.tres
 res://Assets/Shaders/Gas.gdshader
 res://Assets/Scenes/Managers/StartMenu.tscn
 res://Assets/Scenes/Managers/GameManager.tscn
 res://Assets/Scenes/UI/SkillButton.tscn
 res://Assets/Scenes/Managers/SkillTree.tscn
+res://Assets/Scenes/UI/UI.tscn
 res://Assets/Scripts/Drop.cs
 res://Assets/Scripts/Enemy.cs
 res://Assets/Scripts/GameManager.cs
@@ -20,3 +22,4 @@ res://Assets/Scripts/Managers/StartMenu.cs
 res://Assets/Scripts/Managers/UI.cs
 res://Assets/Scripts/Managers/WaveManager.cs
 res://Assets/Scripts/Player.cs
+res://Assets/Data/Abilities.json

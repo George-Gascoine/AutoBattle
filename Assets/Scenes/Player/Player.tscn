@@ -157,12 +157,16 @@ libraries = {
 [node name="Cooldowns" type="Node2D" parent="."]
 
 [node name="Ability1CD" type="Timer" parent="Cooldowns"]
+one_shot = true
 
 [node name="Ability2CD" type="Timer" parent="Cooldowns"]
+one_shot = true
 
 [node name="Ability3CD" type="Timer" parent="Cooldowns"]
+one_shot = true
 
 [node name="Ability4CD" type="Timer" parent="Cooldowns"]
+one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationEnd"]
 [connection signal="area_entered" from="PickUpArea" to="." method="OnAreaEntered"]

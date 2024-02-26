@@ -7,8 +7,28 @@
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\abilitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\skillmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\skillmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\skillbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\skillbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|c:\\github\\autobattle\\assets\\scripts\\managers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E154B5B8-988E-4B3D-BB41-DDA89CDFC27D}|AutoBattle.csproj|solutionrelative:assets\\scripts\\managers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,20 +48,86 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AQIAAGoAAAAAAAAAAAAcwHMAAAAYAAAA",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAmwE8AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T16:00:43.201Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ParticleEmitter.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\ParticleEmitter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ParticleEmitter.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\ParticleEmitter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\ParticleEmitter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T14:16:36.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AbilityManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\AbilityManager.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\AbilityManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\AbilityManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-24T13:22:02.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UI.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\UI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\UI.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\UI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\UI.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAuwFEAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T20:14:24.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SkillButton.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\SkillButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SkillButton.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\SkillButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SkillButton.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T19:53:43.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SkillManager.cs",
+              "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\SkillManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SkillManager.cs",
+              "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\Managers\\SkillManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SkillManager.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T19:53:38.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\GitHub\\AutoBattle\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAQwDgAAAAfAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAtwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T10:46:49.102Z",
               "EditorCaption": ""

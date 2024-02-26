@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net.Http;
 
 public partial class Player : CharacterBody2D
@@ -17,8 +19,8 @@ public partial class Player : CharacterBody2D
     public Texture2D idle, walk;
     public Area2D damageArea;
     public string direction;
-    public bool[] abilityActives = new bool[4];
-    public Timer[] abilityCooldowns = new Timer[4];
+    public List<AbilityManager.Ability> abilities = new();
+    public Timer[] abilityCooldowns;
 
     [Export]
     public float Speed { get; set; } = 64;
@@ -59,16 +61,24 @@ public partial class Player : CharacterBody2D
 
     public void PlayerSetup()
     {
-        for(int i = 0; i < 3; i++)
+        foreach(int id in data.abilityIDs)
         {
-            abilityActives[i] = false;
+            AbilityManager.Ability addThis = gameManager.abilityData.First(ability => ability.id == id);
+            abilities.Add(addThis);
+        }
+        abilityCooldowns = new Timer[abilities.Count];
+        for(int i = 0; i < abilityCooldowns.Length - 1; i++)
+        {
             abilityCooldowns[i] = GetNode<Timer>("Cooldowns/" + "Ability" + (i + 1).ToString() + "CD");
-            abilityCooldowns[i].WaitTime = 10f;
-            abilityCooldowns[i].Timeout += () =>
+            if (abilities[i].type == "Cooldown")
             {
-                GD.Print("Ability " + i.ToString());
-                abilityActives[i] = false;
-            };
+                abilityCooldowns[i].WaitTime = abilities[i].cooldown;
+            }
+            else if (abilities[i].type == "Toggle")
+            {
+                GD.Print("abilitylength" + i);
+                abilityCooldowns[i].WaitTime = 0.1;
+            }
         }
 
         string spriteFolder = "res://Assets/Sprites/Characters/" + data.name;
@@ -84,36 +94,32 @@ public partial class Player : CharacterBody2D
     {
         Vector2 inputDirection = Input.GetVector("Left", "Right", "Up", "Down");
         Velocity = inputDirection * Speed;
-        if (Input.IsActionJustPressed("1") && abilityActives[0] == false)
+        if (Input.IsActionJustPressed("1") && abilityCooldowns[0].TimeLeft == 0)
         {
+            
             abilityCooldowns[0].Start();
-            abilityActives[0] = true;
             abilityManager.UseAbility(data.abilityIDs[0]);
         }
-        if (Input.IsActionJustPressed("2") && abilityActives[1] == false)
+        if (Input.IsActionJustPressed("2") && abilityCooldowns[1].TimeLeft == 0)
         {
             abilityCooldowns[1].Start();
-            abilityActives[1] = true;
             abilityManager.UseAbility(data.abilityIDs[1]);
         }
-        if (Input.IsActionJustPressed("3") && abilityActives[2] == false)
+        if (Input.IsActionJustPressed("3") && abilityCooldowns[2].TimeLeft == 0)
         {
-            GD.Print("BOOL " + abilityActives[3]);
             abilityCooldowns[2].Start();
-            abilityActives[2] = true;
             abilityManager.UseAbility(data.abilityIDs[2]);
         }
-        if (Input.IsActionJustPressed("4") && abilityActives[3] == false)
+        if (Input.IsActionJustPressed("4") && abilityCooldowns[3].TimeLeft == 0)
         {
             abilityCooldowns[3].Start();
-            abilityActives[3] = true;
             abilityManager.UseAbility(data.abilityIDs[3]);
         }
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        GD.Print(Speed);
+        GD.Print(abilityCooldowns[0].TimeLeft);
         var overlapping_areas = damageArea.GetOverlappingAreas();
         foreach(Area2D area in overlapping_areas)
         {
@@ -209,6 +215,8 @@ public partial class Player : CharacterBody2D
     {
         experience -= 100;
         UI.UpdatePlayerExperience(experience);
+        UI.skillManager.availableSkillPoints += 1;
+        UI.DisplaySkillTree();
     }
     public void OnAnimationEnd(string animName)
     {

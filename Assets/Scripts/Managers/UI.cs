@@ -4,6 +4,7 @@ using System;
 public partial class UI : CanvasLayer
 {
     public GameManager gameManager;
+    public SkillManager skillManager;
     public Label timerLabel, scoreLabel;
     public ProgressBar hpBar, gasBar, experienceBar;
     public int[] abilities;
@@ -12,6 +13,7 @@ public partial class UI : CanvasLayer
     public override void _Ready()
     {
         gameManager = (GameManager)GetNode("/root/GameManager");
+        skillManager = GetNode<SkillManager>("SkillTree");
         //		ability1CD = GetNode<Sprite2D>("Ability1CD");
     }
 
@@ -75,6 +77,11 @@ public partial class UI : CanvasLayer
         experienceBar.Value = playerExperience;
     }
 
+    public void DisplaySkillTree()
+    {
+        gameManager.PauseGame();
+        skillManager.Visible = true;
+    }
 
     public void UpdateAbilityCooldowns()
     {

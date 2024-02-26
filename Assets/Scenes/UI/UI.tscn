@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba4tb8xhcqswr"]
+[gd_scene load_steps=14 format=3 uid="uid://ba4tb8xhcqswr"]
 
 [ext_resource type="Theme" uid="uid://c1odjks571pmy" path="res://Assets/Themes/HealthBarTheme.tres" id="1_84fln"]
 [ext_resource type="Script" path="res://Assets/Scripts/Managers/UI.cs" id="1_mo48o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd63dy2qunexc" path="res://Assets/Sprites/UI/HP icon.png" id="5_oe44b"]
 [ext_resource type="FontFile" uid="uid://ib67ral44esq" path="res://Assets/Fonts/m5x7.ttf" id="6_l8833"]
 [ext_resource type="Texture2D" uid="uid://cwfuyqithebuh" path="res://Assets/Sprites/Drops/ToxicCanister.png" id="6_nkxmq"]
+[ext_resource type="PackedScene" uid="uid://fvjl4siumhfd" path="res://Assets/Scenes/Managers/SkillTree.tscn" id="8_mbrif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykgxh"]
 bg_color = Color(0, 0, 0, 0)
@@ -193,3 +194,6 @@ vertical_alignment = 1
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SkillTree" parent="." instance=ExtResource("8_mbrif")]
+visible = false

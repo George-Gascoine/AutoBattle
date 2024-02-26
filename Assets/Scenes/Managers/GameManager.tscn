@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvmgecuy7l5ld"]
+[gd_scene load_steps=11 format=3 uid="uid://cvmgecuy7l5ld"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/GameManager.cs" id="1_50n6k"]
 [ext_resource type="PackedScene" uid="uid://cl8ot4j6c8eth" path="res://Assets/Scenes/UI/DamageNumber.tscn" id="2_enm33"]
@@ -9,6 +9,7 @@
 [ext_resource type="JSON" path="res://Assets/Data/Levels.json" id="6_ls5yf"]
 [ext_resource type="JSON" path="res://Assets/Data/Waves.json" id="7_ayqa6"]
 [ext_resource type="JSON" path="res://Assets/Data/Skills.json" id="8_7dqe1"]
+[ext_resource type="JSON" path="res://Assets/Data/Abilities.json" id="10_lpfcb"]
 
 [node name="GameManager" type="Node2D"]
 process_mode = 3
@@ -21,3 +22,4 @@ dropsJSON = ExtResource("5_etf8y")
 levelsJSON = ExtResource("6_ls5yf")
 wavesJSON = ExtResource("7_ayqa6")
 skillsJSON = ExtResource("8_7dqe1")
+abilitiesJSON = ExtResource("10_lpfcb")
